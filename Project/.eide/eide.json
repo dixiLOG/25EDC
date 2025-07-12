@@ -1,0 +1,365 @@
+{
+  "name": "STM32F407_ProjectTemplate",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "Common",
+        "files": [
+          {
+            "path": "../Common/common.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Main",
+        "files": [
+          {
+            "path": "../Main/main.c"
+          },
+          {
+            "path": "../Main/stm32f4xx_it.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Startup_config",
+        "files": [
+          {
+            "path": "../Startup_config/system_stm32f4xx.c"
+          },
+          {
+            "path": "../Startup_config/startup_stm32f40_41xxx.s"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "STM32F4_FWLIB",
+        "files": [
+          {
+            "path": "../STM32F4_FWLIB/src/misc.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_gpio.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_usart.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_adc.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_dac.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_rcc.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_spi.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_tim.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_dma.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_fsmc.c"
+          },
+          {
+            "path": "../STM32F4_FWLIB/src/stm32f4xx_i2c.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "USER",
+        "files": [
+          {
+            "path": "../USER/src/adc.c"
+          },
+          {
+            "path": "../USER/src/dac.c"
+          },
+          {
+            "path": "../USER/src/dma.c"
+          },
+          {
+            "path": "../USER/src/spi.c"
+          },
+          {
+            "path": "../USER/src/timer.c"
+          },
+          {
+            "path": "../USER/src/uart.c"
+          },
+          {
+            "path": "../USER/src/lcd.c"
+          },
+          {
+            "path": "../USER/src/i2c.c"
+          },
+          {
+            "path": "../USER/src/fft.c"
+          },
+          {
+            "path": "../USER/src/w25qxx.c"
+          },
+          {
+            "path": "../USER/src/led.c"
+          },
+          {
+            "path": "../USER/src/key.c"
+          },
+          {
+            "path": "../USER/src/pid.c"
+          },
+          {
+            "path": "../USER/src/touch.c"
+          },
+          {
+            "path": "../USER/src/xpt2046.c"
+          },
+          {
+            "path": "../USER/src/convolution.c"
+          },
+          {
+            "path": "../USER/src/math_helper.c"
+          },
+          {
+            "path": "../USER/src/AD9833.c"
+          },
+          {
+            "path": "../USER/src/GPIO.c"
+          },
+          {
+            "path": "../USER/src/pwm.c"
+          },
+          {
+            "path": "../USER/src/freqmeas.c"
+          },
+          {
+            "path": "../USER/src/arm_cmsis_dsp.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "DSP_LIB",
+        "files": [
+          {
+            "path": "../DSP_LIB/arm_cortexM4lf_math.lib"
+          },
+          {
+            "path": "../DSP_LIB/Include/arm_common_tables.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/arm_const_structs.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/arm_math.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cm0.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cm0plus.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cm3.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cm4.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cm4_simd.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cmFunc.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_cmInstr.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_sc000.h"
+          },
+          {
+            "path": "../DSP_LIB/Include/core_sc300.h"
+          }
+        ],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "4b524f0e91d281cef3f71355757f59e2"
+  },
+  "targets": {
+    "ProjectTemplate": {
+      "excludeList": [],
+      "toolchain": "AC5",
+      "compileConfig": {
+        "cpuType": "Cortex-M4",
+        "floatingPointHardware": "single",
+        "scatterFilePath": "",
+        "useCustomScatterFile": false,
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x20000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x10000000",
+                "size": "0x10000"
+              },
+              "isChecked": true,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x8000000",
+                "size": "0x80000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "../Common",
+          "../Startup_config",
+          "../STM32F4_FWLIB/inc",
+          "../USER/inc",
+          "../DSP_LIB",
+          "../DSP_LIB/Include",
+          ".cmsis/include",
+          "RTE/_ProjectTemplate"
+        ],
+        "libList": [],
+        "defineList": [
+          "STM32F40_41xxx",
+          "USE_STDPERIPH_DRIVER",
+          "__TARGET_FPU_VFP",
+          "__FPU_USED",
+          "__FPU_PRESENT",
+          "ARM_MATH_CM4",
+          "__CC_ARM",
+          "ARM_MATH_MATRIX_CHECK",
+          "ARM_MATH_ROUNDING"
+        ]
+      }
+    }
+  },
+  "version": "3.4"
+}
