@@ -28,7 +28,7 @@ Project File Date:  07/08/2025
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\MDK5.36\ARM\ARMCC\Bin'
 Build target 'ProjectTemplate'
 compiling main.c...
-..\USER\inc\arm_cmsis_dsp.h(889): warning:  #9-D: nested comment is not allowed
+..\USER\inc\arm_cmsis_dsp.h(906): warning:  #9-D: nested comment is not allowed
   			/*
 ..\USER\inc\wavetest.h(61): warning:  #1295-D: Deprecated declaration wave_testv2 - give arg types
   void wave_testv2();
@@ -38,15 +38,13 @@ compiling main.c...
   #endif // __WAVETEST_H
 ..\Main\main.c(134): warning:  #1035-D: single-precision operand implicitly converted to double-precision
       rounded_fc = (int)((data + 2.5) / 5) * 5;
-..\Main\main.c(412): warning:  #1-D: last line of file ends without a newline
-  }
-..\Main\main.c: 6 warnings, 0 errors
-compiling arm_cmsis_dsp.c...
-..\USER\inc\arm_cmsis_dsp.h(889): warning:  #9-D: nested comment is not allowed
-  			/*
-..\USER\src\arm_cmsis_dsp.c: 1 warning, 0 errors
+..\Main\main.c(409): warning:  #9-D: nested comment is not allowed
+  				/*
+..\Main\main.c(433): warning:  #1-D: last line of file ends without a newline
+  //}
+..\Main\main.c: 7 warnings, 0 errors
 linking...
-Program Size: Code=58192 RO-data=44640 RW-data=356 ZI-data=111836  
+Program Size: Code=28928 RO-data=42488 RW-data=264 ZI-data=110368  
 FromELF: creating hex file...
 ".\STM32F407_ProjectTemplate.axf" - 0 Error(s), 7 Warning(s).
 

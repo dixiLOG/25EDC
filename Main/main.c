@@ -383,7 +383,8 @@ int main(void) {
 				DSP_PID_DRAW(setV,realOut);*/
 
 				//---------------------//
-				
+				sprintf(String, "hello");
+				LCD_DisplayString(10, 150, 12, (u8*)String);
 				
 			
 				//LCD_TOUCH_TEST(); //ÐéÄâ´¥ÆÁ°´¼ü²âÊÔ
