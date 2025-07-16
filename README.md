@@ -6,14 +6,14 @@
 
 ## 主要特性
 
-### 🎯 核心功能
+### 核心功能
 - **信号分析与处理**: 集成FFT快速傅里叶变换，实时频谱分析
 - **波形识别**: 智能波形检测算法，支持多种波形类型识别
 - **信号生成**: AD9833 DDS信号发生器，可产生正弦波、三角波等
 - **频率测量**: 高精度方波频率测量功能
 - **数据存储**: W25QXX SPI Flash存储器，支持数据读写
 
-### 🔧 硬件接口
+### 硬件接口
 - **ADC采集**: 双通道ADC采样，支持DMA传输
 - **DAC输出**: 12位DAC输出，可调节电压
 - **LCD显示**: 彩色LCD显示屏，支持图形和文字显示
@@ -22,7 +22,7 @@
 - **按键控制**: 硬件按键输入，支持多种操作模式
 - **LED指示**: 状态指示LED
 
-### 📊 信号处理
+### 信号处理
 - **FFT分析**: 实时频谱分析，支持可配置的采样频率和点数
 - **卷积运算**: 数字信号卷积处理
 - **PID控制**: 比例-积分-微分控制器
@@ -101,7 +101,7 @@
 ## 功能模块详解
 
 ### 1. 信号采集模块 (ADC)
-- **ADC1**: 双通道采样，使用TIM2触发，DMA2传输
+- **ADC1**: 单通道采样，使用TIM2触发，DMA2传输
 - **ADC3**: 双通道采样，支持实时电压显示
 - **采样频率**: 可配置，支持高速连续采样
 
@@ -131,6 +131,36 @@
 - **容量**: 支持多种容量型号
 - **接口**: SPI通信
 - **功能**: 数据读写、扇区操作
+
+### 7. 数字信号处理模块（DSP）
+- **核心文件**：USER/src/arm_cmsis_dsp.c、USER/inc/arm_cmsis_dsp.h
+- **功能概述**：基于ARM CMSIS-DSP库的二次封装，提供丰富的数字信号处理函数，涵盖基础运算、矩阵运算、滤波、卷积、相关性、自适应滤波、PID控制、统计分析、插值等。
+- **主要功能类别**：
+  - 基础数学运算：加法、减法、乘法、取绝对值、缩放、偏移、点积、区间剪裁、移位等
+  - 复数运算：共轭、点积、取模、模平方、复数乘法、复实数乘法
+  - 矩阵运算：初始化、加减乘、比例缩放、求逆、转置
+  - 滤波与卷积：FIR滤波、卷积、区域卷积、相关性、下采样/上采样FIR、LMS/NLMS自适应滤波
+  - 控制算法：PID控制器（支持仿真与可视化）
+  - 统计分析：最大/最小值、均值、方差、标准差、均方根、平方和
+  - 插值：线性插值
+  - 支持函数：数组复制、填充、FIFO滤波
+- **调用方式举例**：
+  - 数组运算：`DSP_ADD(pSrcA, pSrcB, pDst, blockSize);`
+  - 单值运算：`DSP_ABS(&a, &b, 1);`
+  - 矩阵运算：`DSP_MAT_ADD(pSrcA, pSrcB, pDst, nRows, nColumns);`
+  - FIR滤波：`DSP_FIR_FIL(pSrc, pDst, sampleP, blockSize, pCoeffs, numTaps);`
+  - LMS自适应滤波：`DSP_LMS_FILTER(pSrc, pRef, pDst, err, inputLen, pCoeffs, numTaps, mu, state);`
+  - PID控制：
+    ```c
+    DSP_PID_Controller my_pid;
+    DSP_PID_Init(&my_pid, Kp, Ki, Kd, tol, upper, lower);
+    float32_t adjust = DSP_PID_Compute(&my_pid, error);
+    ```
+- **详细注释与用法**：见USER/inc/arm_cmsis_dsp.h头文件说明。
+- **参考文档**：
+  - [ARM CMSIS-DSP 官方文档](https://arm-software.github.io/CMSIS_6/latest/DSP/index.html)
+  - [CMSIS-DSP GitHub](https://github.com/ARM-software/CMSIS-DSP)
+  - [CMSIS-DSP 示例](https://arm-software.github.io/CMSIS-DSP/v1.10.1/group__groupExamples.html)
 
 ## 使用说明
 
@@ -166,8 +196,8 @@
 - **ADC分辨率**: 12位
 - **DAC分辨率**: 12位
 - **FFT处理速度**: 实时处理
-- **频率测量精度**: 0.001Hz
-- **显示刷新率**: 30fps
+- **频率测量精度**: 1Hz
+- **显示刷新率**: 30fps（可调）
 
 ### 通信接口
 - **UART**: 115200bps
