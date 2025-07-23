@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "*.lua": "lua",
+        "freqmeas.h": "c",
+        "common.h": "c",
+        "touch.h": "c",
+        "dac.h": "c",
+        "uart.h": "c",
+        "spi.h": "c",
+        "ad9833.h": "c",
+        "dma.h": "c",
+        "fft.h": "c",
+        "timer.h": "c",
+        "font.h": "c",
+        "arm_cmsis_dsp.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "wavetest.h": "c",
+        "compare": "c",
+        "limits": "c",
+        "new": "c",
+        "stdbool.h": "c",
+        "stm32f4xx.h": "c",
+        "lcd.h": "c"
+    }
+}

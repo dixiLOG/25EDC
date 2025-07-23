@@ -1,0 +1,10 @@
+.\math_helper.o: ..\USER\src\math_helper.c
+.\math_helper.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
+.\math_helper.o: ..\USER\inc\math_helper.h
+.\math_helper.o: ..\DSP_LIB\Include\arm_math.h
+.\math_helper.o: ..\DSP_LIB\Include\core_cm4.h
+.\math_helper.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+.\math_helper.o: ..\Startup_config\core_cmInstr.h
+.\math_helper.o: ..\Startup_config\core_cmFunc.h
+.\math_helper.o: ..\Startup_config\core_cm4_simd.h
+.\math_helper.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
