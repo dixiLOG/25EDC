@@ -1,5 +1,12 @@
 # 25EDC - STM32F407 电子设计竞赛项目
 
+## 延伸子项目
+
+基于这一版本魔改实战，位于其他分支，亦可点击跳转；具体见其README
+
+- [17年E题 - 自适应滤波代码实战](https://github.com/dixiLOG/25EDC/tree/25EDCforAdaF)
+
+
 ## 项目简介
 
 本项目基于STM32F407VG(1MB Flash, 128KB SRAM,具体自查DATASHEET)，为2025年电子设计竞赛而开发
