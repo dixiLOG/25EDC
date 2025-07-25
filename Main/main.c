@@ -96,6 +96,11 @@ float32_t y_in_buf[Y_BUF_SIZE];   // 原始信号段
 float32_t y_out_buf[Y_BUF_SIZE];  // 滤波后信号段
 //======================
 
+// 补偿参数
+u16 cntForAmp = 0;
+//======================
+
+
 /**
  * @brief  将一个频率值四舍五入到最接近的5的倍数。
  * @param  data 输入的频率值。
@@ -173,6 +178,8 @@ void ADC_Show() {
     LCD_DisplayString(150, 30, 16, (u8*)String);
 
 }
+
+
 
 
 /**
@@ -267,7 +274,8 @@ int main(void) {
     float32_t maxid_ave,maxAmp_ave;
     float32_t maxAmp[2],maxid[2];
     u16 cnt = 0; 
-
+		
+		
     while (1) {
         //R_Touch_test(); // 运行触摸屏测试;测试时后面功能失效
         buttom_function(); // 检查按键
@@ -298,7 +306,7 @@ int main(void) {
             DSP_MEAN(maxAmp,2,&maxAmp_ave);
             float amp_comp = estimate_theoretical_amp(maxid_ave, maxAmp_ave/1000.0f);  // 幅值补偿
             // 将补偿后的幅值转换为DAC7612的输入值
-            u16 cntForAmp = Amp2Num(amp_comp*1000.0f);
+            cntForAmp = Amp2Num(amp_comp*1000.0f);
 
             // 显示结果
             sprintf(String, "maxid_ave  = %.3f KHz",maxid_ave);
@@ -309,12 +317,12 @@ int main(void) {
             LCD_DisplayString(10, 150, 12, (u8*)String);
             
             // 信号输出
-            DAC7612_Write_CHA(cntForAmp);// 本电路下，320→880mVpp(峰峰值)...505→2000mVpp(峰值)，大致线性
+						if(cntForAmp >= 160 ) cntForAmp = 155;	//限幅
+            DAC7612_Write_CHB(cntForAmp);// 本电路下，0→1000mVpp(峰峰值)...153→2000mVpp(峰值)，大致线性
             AD9833_WaveOut(SIN_WAVE,maxid_ave*1000.0f,0,1);
         }
         // 计数器循环
         cnt = cnt %	2;			
-
 
         // 提取一段波形用于绘图（共230点，为LCD屏幕宽度像素点）
         for (int i = 0; i < Y_BUF_SIZE; i++) {

@@ -27,14 +27,6 @@ Project File Date:  07/22/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\MDK5.36\ARM\ARMCC\Bin'
 Build target 'ProjectTemplate'
-compiling fft.c...
-..\USER\src\fft.c(52): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-          if (data[i] > data[i - 1] && data[i] > data[i + 1] && data[i] >= 0.15)
-..\USER\src\fft.c: 1 warning, 0 errors
-compiling arm_cmsis_dsp.c...
-..\USER\inc\arm_cmsis_dsp.h(922): warning:  #9-D: nested comment is not allowed
-  			/*
-..\USER\src\arm_cmsis_dsp.c: 1 warning, 0 errors
 compiling main.c...
 ..\USER\inc\arm_cmsis_dsp.h(922): warning:  #9-D: nested comment is not allowed
   			/*
@@ -44,17 +36,17 @@ compiling main.c...
   void wave_test_showinuart();
 ..\USER\inc\wavetest.h(63): warning:  #1-D: last line of file ends without a newline
   #endif // __WAVETEST_H
-..\Main\main.c(106): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Main\main.c(111): warning:  #1035-D: single-precision operand implicitly converted to double-precision
       rounded_fc = (int)((data + 2.5) / 5) * 5;
-..\Main\main.c(222): warning:  #177-D: variable "ITER_NUM"  was declared but never referenced
+..\Main\main.c(229): warning:  #177-D: variable "ITER_NUM"  was declared but never referenced
   		u8 ITER_NUM = 4;
-..\Main\main.c(331): warning:  #1-D: last line of file ends without a newline
+..\Main\main.c(339): warning:  #1-D: last line of file ends without a newline
   }
 ..\Main\main.c: 7 warnings, 0 errors
 linking...
-Program Size: Code=57504 RO-data=45048 RW-data=160 ZI-data=108152  
+Program Size: Code=57528 RO-data=45024 RW-data=164 ZI-data=108156  
 FromELF: creating hex file...
-".\STM32F407_ProjectTemplate.axf" - 0 Error(s), 9 Warning(s).
+".\STM32F407_ProjectTemplate.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -67,7 +59,7 @@ Package Vendor: Keil
   D:\MDK5.36\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

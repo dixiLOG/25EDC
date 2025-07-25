@@ -157,9 +157,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>317</LineNumber>
+          <LineNumber>323</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134219980</Address>
+          <Address>134220436</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -168,28 +168,12 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Main\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\STM32F407_ProjectTemplate\../Main/main.c\317</Expression>
+          <Expression>\\STM32F407_ProjectTemplate\../Main/main.c\323</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>350</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Main\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>351</LineNumber>
+          <LineNumber>325</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>

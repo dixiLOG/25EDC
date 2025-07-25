@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\STM32F407_ProjectTemplate.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\STM32F407_ProjectTemplate.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Jul 23 22:00:12 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jul 25 10:50:31 2025
 <BR><P>
 <H3>Maximum Stack Usage =        224 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -158,11 +158,11 @@ Global Symbols
 
 <P><STRONG><a name="[ec]"></a>delay_us</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, common.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHA
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHB
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_WAKEUP
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_PowerDown
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ReadReg
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHB
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHA
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHAB
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_Reg
 </UL>
@@ -246,7 +246,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5d]"></a>main</STRONG> (Thumb, 782 bytes, Stack size 48 bytes, main.o(.text))
+<P><STRONG><a name="[5d]"></a>main</STRONG> (Thumb, 800 bytes, Stack size 48 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = main &rArr; ADC3_Init &rArr; USER_DMA_Config &rArr; NVIC_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
@@ -266,7 +266,7 @@ Global Symbols
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DSP_MEAN
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DSP_LMS_DRAW
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DSP_FFT
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHA
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHB
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Init
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC1_Init
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Amp2Num
@@ -2499,9 +2499,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHA
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHB
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Init
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHB
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHA
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_CHAB
 </UL>
 
@@ -2520,18 +2520,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[93]"></a>DAC7612_Write_CHA</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, dac7612.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DAC7612_Write_CHA &rArr; DAC7612_Write_Reg
+<P><STRONG><a name="[18a]"></a>DAC7612_Write_CHA</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, dac7612.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_Reg
+</UL>
+
+<P><STRONG><a name="[93]"></a>DAC7612_Write_CHB</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, dac7612.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DAC7612_Write_CHB &rArr; DAC7612_Write_Reg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_Reg
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[18a]"></a>DAC7612_Write_CHB</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, dac7612.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC7612_Write_Reg
 </UL>
 
 <P><STRONG><a name="[121]"></a>arm_abs_f32</STRONG> (Thumb, 164 bytes, Stack size 0 bytes, arm_abs_f32.o(.text), UNUSED)
