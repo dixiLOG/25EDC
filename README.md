@@ -124,7 +124,7 @@ float y_n = g_iir_coeffs.b[0] * x_n + g_iir_coeffs.b[1] * x_prev1 + g_iir_coeffs
 
 -----
 
-## 📂 项目结构说明
+## 项目结构说明
 
 ```
 25EDC-Problem-G/
@@ -190,10 +190,6 @@ float y_n = g_iir_coeffs.b[0] * x_n + g_iir_coeffs.b[1] * x_prev1 + g_iir_coeffs
 ## ⚖️ 许可证
 
 本项目采用 [MIT License](https://www.google.com/search?q=LICENSE) 开源。仅供学习交流，切勿直接用于商业用途或抄袭参赛。
-
-## 许可证
-
-本项目采用MIT许可证，详见 [LICENSE](LICENSE) 文件。
 
 ---
 
