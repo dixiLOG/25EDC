@@ -21,32 +21,30 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Keil_pm\2025STM32F407\prepareCode\25EDCForAdaF\Project\STM32F407_ProjectTemplate.uvprojx
-Project File Date:  07/22/2025
+C:\Keil_pm\2025STM32F407\prepareCode\25EDC_Real\Project\STM32F407_ProjectTemplate.uvprojx
+Project File Date:  08/02/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\MDK5.36\ARM\ARMCC\Bin'
 Build target 'ProjectTemplate'
-compiling main.c...
-..\USER\inc\arm_cmsis_dsp.h(922): warning:  #9-D: nested comment is not allowed
-  			/*
-..\USER\inc\wavetest.h(61): warning:  #1295-D: Deprecated declaration wave_testv2 - give arg types
-  void wave_testv2();
-..\USER\inc\wavetest.h(62): warning:  #1295-D: Deprecated declaration wave_test_showinuart - give arg types
-  void wave_test_showinuart();
-..\USER\inc\wavetest.h(63): warning:  #1-D: last line of file ends without a newline
-  #endif // __WAVETEST_H
-..\Main\main.c(111): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-      rounded_fc = (int)((data + 2.5) / 5) * 5;
-..\Main\main.c(229): warning:  #177-D: variable "ITER_NUM"  was declared but never referenced
-  		u8 ITER_NUM = 4;
-..\Main\main.c(339): warning:  #1-D: last line of file ends without a newline
+compiling touch.c...
+..\USER\inc\learning_mode.h(78): warning:  #1295-D: Deprecated declaration Run_Offline_Algorithm_Test - give arg types
+  extern void Run_Offline_Algorithm_Test();
+..\USER\inc\learning_mode.h(89): warning:  #1-D: last line of file ends without a newline
+  #endif // __LEARNING_MODE_H__
+..\USER\src\touch.c(81): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i=0;	  
+..\USER\src\touch.c(126): warning:  #940-D: missing return statement at end of non-void function "judge_button" 
   }
-..\Main\main.c: 7 warnings, 0 errors
+..\USER\src\touch.c(800): warning:  #940-D: missing return statement at end of non-void function "get_parameter" 
+  }
+..\USER\src\touch.c(853): warning:  #1-D: last line of file ends without a newline
+  }
+..\USER\src\touch.c: 6 warnings, 0 errors
 linking...
-Program Size: Code=57528 RO-data=45024 RW-data=164 ZI-data=108156  
+Program Size: Code=49720 RO-data=9956 RW-data=296 ZI-data=44224  
 FromELF: creating hex file...
-".\STM32F407_ProjectTemplate.axf" - 0 Error(s), 7 Warning(s).
+".\STM32F407_ProjectTemplate.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,7 +57,7 @@ Package Vendor: Keil
   D:\MDK5.36\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

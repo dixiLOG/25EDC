@@ -38,6 +38,8 @@
 ".\fft.o"
 ".\freqmeas.o"
 ".\dac7612.o"
+".\learning_mode.o"
+".\filter_analyzer.o"
 "..\DSP_LIB\arm_cortexM4lf_math.lib"
 --library_type=microlib --strict --scatter ".\STM32F407_ProjectTemplate.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

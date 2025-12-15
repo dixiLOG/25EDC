@@ -16,7 +16,9 @@
 
 //////////////////////////////////////////////////////////////////////////////////	 
 
-#define Fs 256	//采样率kHz
+//#define Fs 823.592	//采样率kHz
+//#define Fs 512
+#define Fs 525
 //#define ChannelSize 2	//通道数
 #define ChannelSize 1
 #define Sampl_Times 4096	//FFT_N

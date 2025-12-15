@@ -26,43 +26,35 @@ u16 DAC1_Data_Tx[DataSize] = {1650,1684,1719,1753,1787,1821,1855,1889,1923,1957,
 	
 //DAC输出初始化
 void DAC1_Init(void)
-{  
-	/* 使能时钟 */
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);	//使能GPIOA时钟 168MHz
-  RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);	//使能DAC时钟 42MHz
+{
+	/* 1. 使能时钟 (与原配置相同) */
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE); //使能GPIOA时钟
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);   //使能DAC时钟
 
-	/* DAC端口配置 */
-  GPIO_InitTypeDef GPIO_InitStructure;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;	//PA4
-	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AN;	//模拟输入，连接到DAC时同时表示模拟输出
-	GPIO_InitStructure.GPIO_PuPd=GPIO_PuPd_DOWN;	//内部下拉
-  GPIO_Init(GPIOA, &GPIO_InitStructure);	//初始化
+	/* 2. 初始化GPIO (与原配置相同) */
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;    // PA4
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;   // 模拟模式
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL; // 无上下拉
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-	/* DAC初始化设置 */
+	/* 3. DAC初始化设置 */
 	DAC_InitTypeDef DAC_InitType;
-	DAC_InitType.DAC_Trigger=DAC_Trigger_T6_TRGO;	//定时器6触发
-	DAC_InitType.DAC_WaveGeneration=DAC_WaveGeneration_None;	//不使用波形发生
-	DAC_InitType.DAC_LFSRUnmask_TriangleAmplitude=DAC_LFSRUnmask_Bit0;	//屏蔽、幅值设置
-	DAC_InitType.DAC_OutputBuffer=DAC_OutputBuffer_Enable;	//DAC1输出缓存
-  DAC_Init(DAC_Channel_1,&DAC_InitType);	//初始化DAC1
-	
-	/* DAC触发频率 */
-//	TIM6_Init(100,840);	//触发频率 84MHz/100/840 = 1kHz
-//	TIM6_Init(100,420);	//触发频率 84MHz/100/420 = 2kHz
-//	TIM6_Init(10,840);	//触发频率 84MHz/10/840 = 10kHz
-//  TIM6_Init(100,42);	//触发频率 84MHz/100/42 = 20kHz
-//	TIM6_Init(2,3281);	//波形频率 84MHz/2/3281/DataSize ≈ 50Hz，输出连续波形时除以DataSize
+	// **修改点**: 禁用硬件触发，改为软件触发
+	DAC_InitType.DAC_Trigger = DAC_Trigger_None;
+	DAC_InitType.DAC_WaveGeneration = DAC_WaveGeneration_None;
+	DAC_InitType.DAC_LFSRUnmask_TriangleAmplitude = DAC_LFSRUnmask_Bit0;
+	DAC_InitType.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
+	DAC_Init(DAC_Channel_1, &DAC_InitType);
 
-	/* 配置DMA */
-	//USER_DMA_Config(DMA1_Stream5,DMA_Channel_7,DMA_DIR_MemoryToPeripheral,(u32)&DAC->DHR12R1,(u32)&DAC_Data_Tx,DataSize);	//DAC1输出固定值
-//	USER_DMA_Config(DMA1_Stream5,DMA_Channel_7,DMA_DIR_MemoryToPeripheral,(u32)&DAC->DHR12R1,(u32)DAC1_Data_Tx,DataSize);	//DAC1连续输出正弦波（波形可改）
-	
-	/* 配置ADC中的DMA */
-	DAC_DMACmd(DAC_Channel_1,ENABLE);	//使能DAC1的DMA
-	
-	/* 使能DMA */
-	//USER_DMA_Enable(DMA1_Stream5,DataSize);	//使能DMA1的Stream5
-	
-	/* 使能DAC */
-	DAC_Cmd(DAC_Channel_1, ENABLE);	//使能DAC1
+	/* 4. **移除定时器和DMA相关配置** */
+	// TIM6_Init(...);        // 删除对TIM6的调用
+	// USER_DMA_Config(...);  // 删除对DAC的DMA配置调用
+	// DAC_DMACmd(...);       // 删除
+	// USER_DMA_Enable(...);  // 删除
+
+	/* 5. 使能DAC并设置初始值 */
+	DAC_Cmd(DAC_Channel_1, ENABLE);
+	// 设置一个默认的初始输出值，例如0V
+	DAC_SetChannel1Data(DAC_Align_12b_R, 0);
 }

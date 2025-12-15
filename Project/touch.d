@@ -39,5 +39,17 @@
 .\touch.o: ..\USER\inc\xpt2046.h
 .\touch.o: ..\USER\inc\lcd.h
 .\touch.o: ..\USER\inc\led.h
+.\touch.o: ..\USER\inc\key.h
 .\touch.o: ..\USER\inc\uart.h
 .\touch.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+.\touch.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+.\touch.o: ..\USER\inc\AD9833.h
+.\touch.o: ..\USER\inc\spi.h
+.\touch.o: ..\USER\inc\dac7612.h
+.\touch.o: ..\USER\inc\learning_mode.h
+.\touch.o: ..\USER\inc\filter_analyzer.h
+.\touch.o: ..\USER\inc\math_helper.h
+.\touch.o: ..\DSP_LIB\Include\arm_math.h
+.\touch.o: ..\DSP_LIB\Include\core_cm4.h
+.\touch.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+.\touch.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h

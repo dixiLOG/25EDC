@@ -66,3 +66,6 @@
 .\main.o: ..\USER\inc\math_helper.h
 .\main.o: ..\USER\inc\wavetest.h
 .\main.o: ..\USER\inc\dac7612.h
+.\main.o: ..\USER\inc\filter_analyzer.h
+.\main.o: ..\USER\inc\learning_mode.h
+.\main.o: ..\USER\inc\math_helper.h
